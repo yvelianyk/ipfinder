@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { JumbotronComponent } from './shared/jumbotron/jumbotron.component';
+import { ContentComponent } from './content/content.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -17,7 +19,9 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    JumbotronComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

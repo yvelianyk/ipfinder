@@ -1,6 +1,18 @@
 {
-  "home": "Home",
-  "language": "Language",
-  "upload": "Upload",
-  "signin": "Sign In"
+  "shared": {
+    "upload": "Upload",
+    "footerTitle": "Image Host 2015"
+  },
+  "header":{
+    "home": "Home",
+    "language": "Language",
+    "signin": "Sign In"
+  },
+  "jumbotron": {
+    "title": "Free Image Hosting",
+    "info": "Convenient, free and fast image hosting without mandatory registration"
+  },
+  "gallery": {
+    "title": "Gallery"
+  }
 }
