@@ -8,9 +8,10 @@ import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { TranslateService } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { JumbotronComponent } from './shared/jumbotron/jumbotron.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { JumbotronComponent } from './shared/components/jumbotron/jumbotron.component';
 import { ContentComponent } from './content/content.component';
+import { ThumbnailComponent } from './content/thumbnail/thumbnail.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -21,7 +22,8 @@ export function HttpLoaderFactory(http: Http) {
     AppComponent,
     HeaderComponent,
     JumbotronComponent,
-    ContentComponent
+    ContentComponent,
+    ThumbnailComponent
   ],
   imports: [
     BrowserModule,
