@@ -1,12 +1,46 @@
 <div class="modal-header">
-  <h4 class="modal-title">Hi there!</h4>
+  <h4 class="modal-title">{{ 'upload.title' | translate }}</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <p>Hello, {{name}}!</p>
+  <form class="form-horizontal"
+        role="form"
+        #loginform="ngForm"
+        (ngSubmit)="onSubmit()">
+
+    <div style="margin-bottom: 25px"
+         class="input-group" >
+      <div class="card full-width">
+        <img class="card-img-top full-width preview-image"
+             [src]="previewImageUrl"
+             *ngIf="previewImageUrl">
+        <div class="card-block" *ngIf="!previewImageUrl">
+          <p class="card-text">{{ 'upload.noImage' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 25px"
+         class="input-group"
+         onclick="document.querySelector('#image-upload-file').click()">
+      <span class="input-group-addon"><i class="fa fa-folder-open-o"></i></span>
+      <div class="form-control custom-input-file">
+        {{fileForUploading.name}}
+      </div>
+    </div>
+  </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-secondary" (click)="activeModal.close('Close click')">Close</button>
+  <button type="button"
+          class="btn btn-success"
+          [disabled]="!isValid()">{{ 'upload.submit' | translate }}</button>
 </div>
+
+<!-- HIDDEN FILE INPUT -->
+<input type="file"
+       id="image-upload-file"
+       accept="image/jpeg,image/png"
+       (change)="onChange($event)"
+       class="hidden zero-size"/>

@@ -16,6 +16,11 @@
     "submit": "Login",
     "submitFacebook": "Login with Facebook"
   },
+  "upload": {
+    "title": "Upload Image",
+    "noImage": "Please choose image for uploading",
+    "submit": "Upload"
+  },
   "jumbotron": {
     "title": "Free Image Hosting",
     "info": "Convenient, free and fast image hosting without mandatory registration"
