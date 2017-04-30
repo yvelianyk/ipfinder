@@ -14,7 +14,7 @@ export class JumbotronComponent implements OnInit {
   ngOnInit() {
   }
 
-  open() {
+  upload() {
     const modalRef = this.modalService.open(ModalUploadFormComponent);
     modalRef.componentInstance.name = 'World';
   }
