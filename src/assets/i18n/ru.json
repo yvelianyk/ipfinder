@@ -10,7 +10,7 @@
   },
   "signin": {
     "title": "Войти:",
-    "loginPlaceholder": "имя пользователя или ел.почта",
+    "loginPlaceholder": "адрес електронной почты",
     "passwordPlaceholder": "пароль",
     "rememberMe": "Запомнить меня",
     "submit": "Войти",

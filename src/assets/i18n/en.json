@@ -10,7 +10,7 @@
   },
   "signin": {
     "title": "Sign In:",
-    "loginPlaceholder": "username or email",
+    "loginPlaceholder": "email",
     "passwordPlaceholder": "password",
     "rememberMe": "Remember me",
     "submit": "Login",
