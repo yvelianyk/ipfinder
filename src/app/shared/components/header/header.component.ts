@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalUploadFormComponent } from '../modal-upload-form/modal-upload-form.component'
 
 @Component({
   selector: 'app-header',
@@ -8,13 +10,18 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService, private modalService: NgbModal) {}
 
   changeLang(lang: string) {
     this.translate.use(lang);
   }
 
   ngOnInit() {
+  }
+
+  open() {
+    const modalRef = this.modalService.open(ModalUploadFormComponent);
+    modalRef.componentInstance.name = 'World';
   }
 
 }

@@ -12,6 +12,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { JumbotronComponent } from './shared/components/jumbotron/jumbotron.component';
 import { ContentComponent } from './content/content.component';
 import { ThumbnailComponent } from './content/thumbnail/thumbnail.component';
+import { ModalUploadFormComponent } from './shared/components/modal-upload-form/modal-upload-form.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -23,7 +24,8 @@ export function HttpLoaderFactory(http: Http) {
     HeaderComponent,
     JumbotronComponent,
     ContentComponent,
-    ThumbnailComponent
+    ThumbnailComponent,
+    ModalUploadFormComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ export function HttpLoaderFactory(http: Http) {
     })
   ],
   providers: [TranslateService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalUploadFormComponent]
 })
 export class AppModule { }

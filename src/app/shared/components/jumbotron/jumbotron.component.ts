@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalUploadFormComponent } from '../modal-upload-form/modal-upload-form.component'
 
 @Component({
   selector: 'app-jumbotron',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JumbotronComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
 
+  open() {
+    const modalRef = this.modalService.open(ModalUploadFormComponent);
+    modalRef.componentInstance.name = 'World';
+  }
 }
