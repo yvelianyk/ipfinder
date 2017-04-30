@@ -8,6 +8,14 @@
     "language": "Язык",
     "signin": "Войти"
   },
+  "signin": {
+    "title": "Войти:",
+    "loginPlaceholder": "имя пользователя или ел.почта",
+    "passwordPlaceholder": "пароль",
+    "rememberMe": "Запомнить меня",
+    "submit": "Войти",
+    "submitFacebook": "Войти через Facebook"
+  },
   "jumbotron": {
     "title": "Бесплатный хостинг изображений",
     "info": "Удобный, бесплатный и быстрый хостинг изображений без обязательной регистрации"

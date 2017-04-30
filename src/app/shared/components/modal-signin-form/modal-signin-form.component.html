@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Hi there!</h4>
+  <h4 class="modal-title">{{ "signin.title" | translate }}</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -10,18 +10,27 @@
 
     <div style="margin-bottom: 25px" class="input-group">
       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-      <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
+      <input id="login-username"
+             type="text"
+             class="form-control"
+             name="username"
+             value=""
+             placeholder="{{ 'signin.loginPlaceholder' | translate }}">
     </div>
 
     <div style="margin-bottom: 25px" class="input-group">
       <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-      <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+      <input id="login-password"
+             type="password"
+             class="form-control"
+             name="password"
+             placeholder="{{ 'signin.passwordPlaceholder' | translate }}">
     </div>
 
     <div class="input-group">
       <div class="checkbox">
         <label>
-          <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+          <input id="login-remember" type="checkbox" name="remember" value="1"> {{ 'signin.rememberMe' | translate }}
         </label>
       </div>
     </div>
@@ -30,8 +39,8 @@
       <!-- Button -->
 
       <div class="col-sm-12 controls">
-        <a id="btn-login" href="#" class="btn btn-success">Login  </a>
-        <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+        <a id="btn-login" href="#" class="btn btn-success">{{ 'signin.submit' | translate }}</a>
+        <a id="btn-fblogin" href="#" class="btn btn-primary">{{ 'signin.submitFacebook' | translate }}</a>
 
       </div>
     </div>

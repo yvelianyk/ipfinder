@@ -3,10 +3,18 @@
     "upload": "Upload",
     "footerTitle": "Image Host 2015"
   },
-  "header":{
+  "header": {
     "home": "Home",
     "language": "Language",
     "signin": "Sign In"
+  },
+  "signin": {
+    "title": "Sign In:",
+    "loginPlaceholder": "username or email",
+    "passwordPlaceholder": "password",
+    "rememberMe": "Remember me",
+    "submit": "Login",
+    "submitFacebook": "Login with Facebook"
   },
   "jumbotron": {
     "title": "Free Image Hosting",
