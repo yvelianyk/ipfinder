@@ -7,13 +7,16 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { TranslateService } from '@ngx-translate/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { JumbotronComponent } from './shared/components/jumbotron/jumbotron.component';
-import { ContentComponent } from './content/content.component';
-import { ThumbnailComponent } from './content/thumbnail/thumbnail.component';
+import { ContentComponent } from './home/content/content.component';
+import { ThumbnailComponent } from './home/content/thumbnail/thumbnail.component';
 import { ModalUploadFormComponent } from './shared/components/modal-upload-form/modal-upload-form.component';
 import { ModalSigninFormComponent } from './shared/components/modal-signin-form/modal-signin-form.component';
+import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -27,12 +30,15 @@ export function HttpLoaderFactory(http: Http) {
     ContentComponent,
     ThumbnailComponent,
     ModalUploadFormComponent,
-    ModalSigninFormComponent
+    ModalSigninFormComponent,
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
     NgbModule.forRoot(),
     TranslateModule.forRoot({
       loader: {

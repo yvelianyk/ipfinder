@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Thumbnail } from '../shared/models/thumbnail';
+import { Thumbnail } from '../../shared/models/thumbnail';
 
 @Component({
   selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  templateUrl: 'content.component.html',
+  styleUrls: ['content.component.css']
 })
 export class ContentComponent implements OnInit {
 

@@ -6,7 +6,8 @@
   "header": {
     "home": "Домой",
     "language": "Язык",
-    "signin": "Войти"
+    "signin": "Войти",
+    "admin": "Администратор"
   },
   "signin": {
     "title": "Войти:",
