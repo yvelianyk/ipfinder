@@ -1,16 +1,28 @@
 <nav>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link active">{{ "admin.sidebar.items.images" | translate }}</a>
+      <a class="nav-link"
+         routerLink="/admin/images"
+         [routerLinkActive]="['active']">
+        {{ "admin.sidebar.items.images" | translate }}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link">{{ "admin.sidebar.items.reports" | translate }}</a>
+      <a class="nav-link"
+         routerLink="/admin/reports"
+         [routerLinkActive]="['active']">
+        {{ "admin.sidebar.items.reports" | translate }}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link">{{ "admin.sidebar.items.export" | translate }}</a>
+      <a class="nav-link"
+         routerLink="/admin/export"
+         [routerLinkActive]="['active']">
+        {{ "admin.sidebar.items.export" | translate }}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link">{{ "admin.sidebar.items.users" | translate }}</a>
+      <a class="nav-link"
+         routerLink="/admin/users"
+         [routerLinkActive]="['active']">
+        {{ "admin.sidebar.items.users" | translate }}</a>
     </li>
   </ul>
 </nav>

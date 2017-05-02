@@ -18,6 +18,7 @@ import { ModalSigninFormComponent } from './shared/components/modal-signin-form/
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { DashboardModule } from './admin/dashboard/dashboard.module';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 
 export function HttpLoaderFactory(http: Http) {
@@ -43,6 +44,7 @@ export function HttpLoaderFactory(http: Http) {
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    DashboardModule,
     NgbModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
