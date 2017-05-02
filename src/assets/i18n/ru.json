@@ -28,5 +28,15 @@
   },
   "gallery": {
     "title": "Галерея"
+  },
+  "admin": {
+    "sidebar": {
+      "items": {
+        "images": "Загруженные картинки",
+        "export": "Експорт PDF",
+        "reports": "Отчеты",
+        "users": "Пользователи"
+      }
+    }
   }
 }

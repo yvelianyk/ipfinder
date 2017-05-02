@@ -28,5 +28,15 @@
   },
   "gallery": {
     "title": "Gallery"
+  },
+  "admin": {
+    "sidebar": {
+      "items": {
+        "images": "Uploaded Images",
+        "export": "Export PDF",
+        "reports": "Reports",
+        "users": "Users"
+      }
+    }
   }
 }
