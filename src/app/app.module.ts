@@ -17,6 +17,8 @@ import { ModalUploadFormComponent } from './shared/components/modal-upload-form/
 import { ModalSigninFormComponent } from './shared/components/modal-signin-form/modal-signin-form.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -32,7 +34,9 @@ export function HttpLoaderFactory(http: Http) {
     ModalUploadFormComponent,
     ModalSigninFormComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    DashboardComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
