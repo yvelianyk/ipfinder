@@ -1,20 +1,14 @@
 import { Injectable } from '@angular/core';
-import { FacebookService, InitParams, LoginResponse } from 'ngx-facebook';
+import { FacebookService, LoginResponse } from 'ngx-facebook';
+import { Config } from './config.service';
 
 @Injectable()
 export class AuthService {
 
   isConnected: Promise<string> = null;
 
-  // TODO: move init params to config file
   constructor(private fb: FacebookService) {
-    let initParams: InitParams = {
-      appId: '299527913813041',
-      xfbml: true,
-      version: 'v2.8'
-    };
-
-    fb.init(initParams);
+    fb.init(Config.facebook);
 
     this.isConnected = this.fb.getLoginStatus().then((result: any) => {
       return result.status;
