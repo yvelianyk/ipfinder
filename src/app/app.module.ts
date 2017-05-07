@@ -6,6 +6,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { TranslateService } from '@ngx-translate/core';
+import { FacebookModule } from 'ngx-facebook';
+
+import { AuthService } from './shared/services/auth.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,6 +48,7 @@ export function HttpLoaderFactory(http: Http) {
     HttpModule,
     AppRoutingModule,
     DashboardModule,
+    FacebookModule.forRoot(),
     NgbModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -54,7 +58,7 @@ export function HttpLoaderFactory(http: Http) {
       }
     })
   ],
-  providers: [TranslateService],
+  providers: [TranslateService, AuthService],
   bootstrap: [AppComponent],
   entryComponents: [
     ModalUploadFormComponent,

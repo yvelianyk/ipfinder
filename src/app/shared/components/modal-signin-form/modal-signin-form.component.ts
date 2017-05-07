@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from '../../services/auth.service'
 
 import { User } from '../../models/user';
 
@@ -9,17 +10,21 @@ import { User } from '../../models/user';
   styleUrls: ['./modal-signin-form.component.css']
 })
 export class ModalSigninFormComponent {
-
-  constructor(public activeModal: NgbActiveModal) { }
-
+  status: Promise<string> = null;
   submitted = false;
   rememberMe = true;
-
   user = new User('', '');
+
+  constructor(public activeModal: NgbActiveModal, private auth: AuthService) {
+    this.status = this.auth.isConnected;
+  }
 
   onSubmit() {
     this.submitted = true;
-    // TODO: in this place should be sending data to the server
+  }
+
+  submitFacebook() {
+    this.auth.login();
   }
 
 }
