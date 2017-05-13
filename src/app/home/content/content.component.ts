@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Thumbnail } from '../../shared/models/thumbnail';
+import { Thumbnail } from '../../core/models/thumbnail';
 
 @Component({
   selector: 'app-content',

@@ -12,7 +12,7 @@ import { FacebookModule } from 'ngx-facebook';
 // SERVICES:
 // ---------------------------------------------------------------------------------------------------------
 
-import { AuthService } from './shared/services/auth.service';
+import { AuthService } from './core/services/auth.service';
 
 // ---------------------------------------------------------------------------------------------------------
 // MODULES:

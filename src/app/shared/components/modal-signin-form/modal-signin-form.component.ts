@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { AuthService } from '../../services/auth.service'
+import { AuthService } from '../../../core/services/auth.service'
 
-import { User } from '../../models/user';
+import { User } from '../../../core/models/user';
 
 @Component({
   selector: 'app-modal-signin-form',
