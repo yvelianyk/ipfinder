@@ -1,16 +1,17 @@
-import {NgModule}            from '@angular/core';
-import {CommonModule}        from '@angular/common';
-import {FormsModule}         from '@angular/forms';
+import { NgModule }            from '@angular/core';
+import { CommonModule }        from '@angular/common';
+import { FormsModule }         from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import {Http} from '@angular/http';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {TranslateService} from '@ngx-translate/core';
+import { Http } from '@angular/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from '../core/services/auth.service';
 
-import {HeaderComponent}          from './components/header/header.component';
-import {JumbotronComponent}       from './components/jumbotron/jumbotron.component';
-import {ModalSigninFormComponent} from './components/modal-signin-form/modal-signin-form.component';
-import {ModalUploadFormComponent} from './components/modal-upload-form/modal-upload-form.component';
+import { HeaderComponent }          from './components/header/header.component';
+import { JumbotronComponent }       from './components/jumbotron/jumbotron.component';
+import { ModalSigninFormComponent } from './components/modal-signin-form/modal-signin-form.component';
+import { ModalUploadFormComponent } from './components/modal-upload-form/modal-upload-form.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -45,7 +46,7 @@ export function HttpLoaderFactory(http: Http) {
     FormsModule,
     TranslateModule
   ],
-  providers: [TranslateService],
+  providers: [TranslateService, AuthService],
   entryComponents: [
     ModalUploadFormComponent,
     ModalSigninFormComponent

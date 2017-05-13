@@ -6,21 +6,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FacebookModule } from 'ngx-facebook';
 
 // ---------------------------------------------------------------------------------------------------------
-// SERVICES:
-// ---------------------------------------------------------------------------------------------------------
-
-import { AuthService } from './core/services/auth.service';
-
-// ---------------------------------------------------------------------------------------------------------
 // MODULES:
 // ---------------------------------------------------------------------------------------------------------
 
 import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from  './core/core.module';
 import { AdminModule } from './admin/admin.module';
 import { HomeModule } from './home/home.module';
 
 // ---------------------------------------------------------------------------------------------------------
-// COMPONENTS:
+// APP COMPONENT:
 // ---------------------------------------------------------------------------------------------------------
 
 import { AppComponent } from './app.component';
@@ -33,14 +28,15 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    CoreModule,
     AppRoutingModule,
     HomeModule,
     AdminModule,
     FacebookModule.forRoot(),
     NgbModule.forRoot()
   ],
-  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+}
