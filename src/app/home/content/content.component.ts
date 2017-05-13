@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Thumbnail } from '../../core/models/thumbnail';
+import { ImagesService } from '../../core/services/images.service';
 
 @Component({
   selector: 'app-content',
@@ -8,15 +9,12 @@ import { Thumbnail } from '../../core/models/thumbnail';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private images: ImagesService) { }
 
   thumbnails: Thumbnail[];
 
   ngOnInit() {
-    this.thumbnails = [];
-    for (let i = 0; i < 12; i++){
-      this.thumbnails.push({src: 'http://placehold.it/400x300'});
-    }
+    this.images.getImages().then(thumbnails => this.thumbnails = thumbnails);
   }
 
 }
