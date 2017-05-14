@@ -11,8 +11,7 @@ import { FacebookModule } from 'ngx-facebook';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from  './core/core.module';
-import { AdminModule } from './admin/admin.module';
-import { HomeModule } from './home/home.module';
+import { SharedModule } from  './shared/shared.module';
 
 // ---------------------------------------------------------------------------------------------------------
 // APP COMPONENT:
@@ -29,9 +28,8 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule,
     CoreModule,
+    SharedModule,
     AppRoutingModule,
-    HomeModule,
-    AdminModule,
     FacebookModule.forRoot(),
     NgbModule.forRoot()
   ],

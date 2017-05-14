@@ -5,6 +5,10 @@ import { RequestOptions, XHRBackend } from '@angular/http';
 import { AuthService } from './services/auth.service';
 import { AuthHttp } from './services/authHttp.service';
 
+export function AuthHttpFactory(backend: XHRBackend, options: RequestOptions) {
+  return new AuthHttp(backend, options);
+}
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,9 +18,7 @@ import { AuthHttp } from './services/authHttp.service';
     AuthService,
     {
       provide: AuthHttp,
-      useFactory: (backend: XHRBackend, options: RequestOptions) => {
-        return new AuthHttp(backend, options);
-      },
+      useFactory: AuthHttpFactory,
       deps: [XHRBackend, RequestOptions]
     }
   ]

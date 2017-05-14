@@ -17,7 +17,9 @@ export class AuthService {
 
   login() {
     return this.fb.login()
-      .then((response: LoginResponse) => console.log(response))
+      .then((response: LoginResponse) => {
+        localStorage.setItem('token', response.authResponse.accessToken);
+      })
       .catch((error: any) => console.error(error));
   }
 

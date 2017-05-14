@@ -14,7 +14,9 @@ export class ContentComponent implements OnInit {
   thumbnails: Thumbnail[];
 
   ngOnInit() {
-    this.images.getImages().then(thumbnails => this.thumbnails = thumbnails);
+    this.images.getImages().then(thumbnails => {
+      this.thumbnails = thumbnails
+    });
   }
 
 }
