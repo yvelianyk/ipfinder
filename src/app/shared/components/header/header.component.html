@@ -7,7 +7,7 @@
           aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" routerLink="/home">Image Host</a>
+  <a class="navbar-brand" routerLink="/home" *ngIf="user.connected">{{user.name || 'Image Host'}}</a>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
@@ -33,7 +33,7 @@
           <a class="dropdown-item" (click)="changeLang('ru')">RU</a>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!user.connected">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="signin()">{{ "header.signin" | translate }}</button>
       </li>
     </ul>

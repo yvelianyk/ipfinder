@@ -1,5 +1,6 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserResolve } from './core/services/user.resolve';
 
 const routes: Routes = [
   {
@@ -9,11 +10,17 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: 'app/admin/admin.module#AdminModule'
+    loadChildren: 'app/admin/admin.module#AdminModule',
+    resolve: {
+      user: UserResolve
+    }
   },
   {
     path: 'home',
-    loadChildren: 'app/home/home.module#HomeModule'
+    loadChildren: 'app/home/home.module#HomeModule',
+    resolve: {
+      user: UserResolve
+    }
   }
 ];
 

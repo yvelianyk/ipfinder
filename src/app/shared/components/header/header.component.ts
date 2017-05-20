@@ -3,6 +3,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalUploadFormComponent } from '../modal-upload-form/modal-upload-form.component'
 import { ModalSigninFormComponent } from '../modal-signin-form/modal-signin-form.component'
+import { ActivatedRoute } from '@angular/router';
+import { IUser } from '../../../core/models/user';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,11 @@ import { ModalSigninFormComponent } from '../modal-signin-form/modal-signin-form
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private translate: TranslateService, private modalService: NgbModal) {}
+  user: IUser;
+
+  constructor(private translate: TranslateService,
+              private modalService: NgbModal,
+              private route: ActivatedRoute) {}
 
   changeLang(lang: string) {
     localStorage.setItem('lang',lang);
@@ -19,6 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this.route.snapshot.data['user'];
   }
 
   upload() {

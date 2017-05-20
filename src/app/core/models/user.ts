@@ -3,6 +3,7 @@ export interface IUser {
   name?: string;
   email: string;
   password: string;
+  connected?: boolean;
 }
 
 export class User implements IUser{

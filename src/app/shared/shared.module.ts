@@ -46,7 +46,10 @@ export function HttpLoaderFactory(http: Http) {
     FormsModule,
     TranslateModule
   ],
-  providers: [TranslateService, AuthService],
+  providers: [
+    TranslateService,
+    AuthService
+  ],
   entryComponents: [
     ModalUploadFormComponent,
     ModalSigninFormComponent

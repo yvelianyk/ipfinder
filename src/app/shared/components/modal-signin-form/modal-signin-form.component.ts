@@ -16,7 +16,6 @@ export class ModalSigninFormComponent {
   user = new User('', '');
 
   constructor(public activeModal: NgbActiveModal, private auth: AuthService) {
-    this.status = this.auth.isConnected;
   }
 
   onSubmit() {
