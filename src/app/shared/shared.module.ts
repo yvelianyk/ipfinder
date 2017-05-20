@@ -54,8 +54,9 @@ export function HttpLoaderFactory(http: Http) {
 })
 export class SharedModule {
   constructor(private translate: TranslateService) {
+    let currentLang = localStorage.getItem('lang') || 'en';
     translate.addLangs(['en', 'ru']);
     translate.setDefaultLang('en');
-    translate.use('en');
+    translate.use(currentLang);
   }
 }

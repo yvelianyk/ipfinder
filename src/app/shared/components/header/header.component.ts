@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor(private translate: TranslateService, private modalService: NgbModal) {}
 
   changeLang(lang: string) {
+    localStorage.setItem('lang',lang);
     this.translate.use(lang);
   }
 
