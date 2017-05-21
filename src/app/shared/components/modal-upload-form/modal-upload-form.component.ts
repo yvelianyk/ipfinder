@@ -7,16 +7,18 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './modal-upload-form.component.html',
   styleUrls: ['./modal-upload-form.component.css']
 })
-export class ModalUploadFormComponent implements OnInit {
+export class ModalUploadFormComponent {
 
-  constructor(public activeModal: NgbActiveModal, private translateService: TranslateService) {}
+  constructor (
+    public activeModal: NgbActiveModal,
+    private translate: TranslateService
+  ) {
+    this._initCurrentLanguage();
+    this._setUploadFilePlaceHolder();
+  }
 
   fileForUploading: any;
   previewImageUrl: string;
-
-  ngOnInit() {
-    this._setUploadFilePlaceHolder();
-  }
 
   onChange(event) {
     this._updatePreviewImage(event);
@@ -34,7 +36,7 @@ export class ModalUploadFormComponent implements OnInit {
   private _setUploadFilePlaceHolder(): void {
     this.fileForUploading = {};
 
-    switch (this.translateService.currentLang) {
+    switch (this.translate.currentLang) {
       case 'en': {
         this.fileForUploading.name = 'Choose file...';
         break;
@@ -61,6 +63,10 @@ export class ModalUploadFormComponent implements OnInit {
   private _handleReaderLoaded(event: any): void {
     let reader = event.target;
     this.previewImageUrl = reader.result;
+  }
+
+  private _initCurrentLanguage() {
+    this.translate.use(localStorage.getItem('lang'));
   }
 
 }

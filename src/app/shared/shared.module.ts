@@ -57,9 +57,25 @@ export function HttpLoaderFactory(http: Http) {
 })
 export class SharedModule {
   constructor(private translate: TranslateService) {
-    let currentLang = localStorage.getItem('lang') || 'en';
-    translate.addLangs(['en', 'ru']);
-    translate.setDefaultLang('en');
-    translate.use(currentLang);
+    this._initLanguages();
+    this._initCurrentLanguage();
+  }
+
+  // -----------------------------------------------
+  // PRIVATE HELPERS:
+  // -----------------------------------------------
+
+  private _initLanguages() {
+    this.translate.addLangs(['en', 'ru']);
+    this.translate.setDefaultLang('en');
+  }
+
+  private _initCurrentLanguage() {
+    let currentLang = localStorage.getItem('lang');
+    if (!currentLang) {
+      currentLang = 'en';
+      localStorage.setItem('lang', currentLang);
+    }
+    this.translate.use(currentLang);
   }
 }
