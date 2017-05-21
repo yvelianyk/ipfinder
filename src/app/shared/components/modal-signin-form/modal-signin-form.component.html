@@ -35,20 +35,7 @@
              placeholder="{{ 'signin.passwordPlaceholder' | translate }}">
     </div>
 
-    <div class="input-group">
-      <div class="checkbox">
-        <label>
-          <input
-            type="checkbox"
-            [(ngModel)]="rememberMe"
-            [ngModelOptions]="{standalone: true}"> {{ 'signin.rememberMe' | translate }}
-        </label>
-      </div>
-    </div>
-
     <div style="margin-top:10px" class="form-group">
-      <!-- Button -->
-
       <div class="col-sm-12 controls">
         <button
           type="submit"
@@ -57,7 +44,6 @@
           {{ 'signin.submit' | translate }}
         </button>
         <button
-          type="submit"
           class="btn btn-primary"
           (click)="submitFacebook()">
           {{ 'signin.submitFacebook' | translate }}
