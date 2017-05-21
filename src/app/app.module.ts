@@ -14,12 +14,6 @@ import { CoreModule } from  './core/core.module';
 import { SharedModule } from  './shared/shared.module';
 
 // ---------------------------------------------------------------------------------------------------------
-// RESOLVERS:
-// ---------------------------------------------------------------------------------------------------------
-
-import { UserResolve } from './core/services/user.resolve';
-
-// ---------------------------------------------------------------------------------------------------------
 // APP COMPONENT:
 // ---------------------------------------------------------------------------------------------------------
 
@@ -38,9 +32,6 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     FacebookModule.forRoot(),
     NgbModule.forRoot()
-  ],
-  providers: [
-    UserResolve
   ],
   bootstrap: [AppComponent]
 })

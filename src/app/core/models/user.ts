@@ -4,6 +4,7 @@ export interface IUser {
   email: string;
   password: string;
   connected?: boolean;
+  isAdmin?: boolean;
 }
 
 export class User implements IUser{

@@ -18,7 +18,7 @@
         <a class="nav-link">{{ "shared.upload" | translate }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/admin" [routerLinkActive]="['active']">{{ "header.admin" | translate }}</a>
+        <a class="nav-link" routerLink="/admin" [routerLinkActive]="['active']" *ngIf="user.isAdmin">{{ "header.admin" | translate }}</a>
       </li>
     </ul>
     <ul class="navbar-nav">

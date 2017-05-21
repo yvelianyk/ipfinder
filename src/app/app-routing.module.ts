@@ -1,6 +1,7 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserResolve } from './core/services/user.resolve';
+import { AuthGuard } from './core/services/authGuard.service';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
     loadChildren: 'app/admin/admin.module#AdminModule',
     resolve: {
       user: UserResolve
-    }
+    },
+    canLoad: [AuthGuard]
   },
   {
     path: 'home',

@@ -4,6 +4,9 @@ import { RequestOptions, XHRBackend } from '@angular/http';
 
 import { AuthService } from './services/auth.service';
 import { AuthHttp } from './services/authHttp.service';
+import { AuthGuard } from './services/authGuard.service';
+import { UserService } from './services/user.service';
+import { UserResolve } from './services/user.resolve';
 
 export function AuthHttpFactory(backend: XHRBackend, options: RequestOptions) {
   return new AuthHttp(backend, options);
@@ -16,6 +19,9 @@ export function AuthHttpFactory(backend: XHRBackend, options: RequestOptions) {
   ],
   providers: [
     AuthService,
+    UserService,
+    UserResolve,
+    AuthGuard,
     {
       provide: AuthHttp,
       useFactory: AuthHttpFactory,
